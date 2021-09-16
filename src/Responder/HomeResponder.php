@@ -5,7 +5,7 @@ namespace Screamer\Responder;
 use Psr\Http\Message\ResponseFactoryInterface as ResponseFactory;
 use Psr\Http\Message\StreamFactoryInterface as StreamFactory;
 
-class HelloWorldResponder extends Responder
+class HomeResponder extends Responder
 {
     protected function found(): void
     {

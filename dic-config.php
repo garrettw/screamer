@@ -32,7 +32,29 @@ return [
         'call' => [['setStrategy', [[Dice::INSTANCE => ApplicationStrategy::class]], Dice::CHAIN_CALL]],
     ],
     '$JsonRouter' => [
+        'shared' => true,
         'instanceOf' => \League\Route\Router::class,
         'call' => [['setStrategy', [[Dice::INSTANCE => JsonStrategy::class]], Dice::CHAIN_CALL]],
-    ]
+    ],
+    PDO::class => [
+        'shared' => true,
+        'constructParams' => [
+            'mysql:host=database;dbname=lemp',
+            'lemp',
+            'lemp',
+        ],
+    ],
+    '$PostsTable' => [
+        'shared' => true,
+        'instanceOf' => \Maphper\DataSource\Database::class,
+        'constructParams' => [[Dice::INSTANCE => PDO::class], 'posts', 'id'],
+    ],
+    '$Posts' => [
+        'shared' => true,
+        'instanceOf' => \Maphper\Maphper::class,
+        'substitutions' => [\Maphper\DataSource::class => [Dice::INSTANCE => '$PostsTable']],
+    ],
+    Screamer\Domain\HomeDomain::class => [
+        'substitutions' => [\Maphper\Maphper::class => [Dice::INSTANCE => '$Posts']],
+    ],
 ];

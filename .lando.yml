@@ -5,3 +5,8 @@ config:
   webroot: public
   database: mariadb
   xdebug: false
+services:
+  pma:
+    type: phpmyadmin
+    hosts:
+      - database

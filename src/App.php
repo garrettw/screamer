@@ -20,7 +20,7 @@ class App
 
     public function __invoke()
     {
-        $this->router->map('GET', '/', Action\HelloWorldAction::class);
+        $this->router->map('GET', '/', Action\HomeAction::class);
 
         $this->sapiEmitter->emit($this->router->dispatch($this->request));
     }

@@ -4,17 +4,17 @@ namespace Screamer\Action;
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-use Screamer\Domain\HelloWorldDomain;
-use Screamer\Responder\HelloWorldResponder;
+use Screamer\Domain\HomeDomain;
+use Screamer\Responder\HomeResponder;
 
-class HelloWorldAction
+class HomeAction
 {
     private $domain;
     private $responder;
 
     public function __construct(
-        HelloWorldDomain $domain,
-        HelloWorldResponder $responder
+        HomeDomain $domain,
+        HomeResponder $responder
     ) {
         $this->domain = $domain;
         $this->responder = $responder;
