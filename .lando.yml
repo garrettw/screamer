@@ -1,0 +1,7 @@
+name: screamer
+recipe: lemp
+config:
+  php: '8.0'
+  webroot: public
+  database: mariadb
+  xdebug: false

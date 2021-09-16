@@ -1,0 +1,31 @@
+{
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/garrettw/aspire-dic"
+        }
+    ],
+    "require": {
+        "level-2/dice": "^4.0",
+        "level-2/maphper": "@dev",
+        "level-2/transphporm": "^1.5",
+        "league/route": "^5.1",
+        "relay/relay": "^2.1",
+        "nyholm/psr7": "^1.4",
+        "laminas/laminas-httphandlerrunner": "^2.0",
+        "nyholm/psr7-server": "^1.0",
+        "tombzombie/dice-interop": "dev-master"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "friendsofphp/php-cs-fixer": "^3.1",
+        "phpspec/phpspec": "^7.1",
+        "kint-php/kint": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Screamer\\": "src/",
+            "": "vendor/"
+        }
+    }
+}
